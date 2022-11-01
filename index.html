@@ -7,23 +7,24 @@
     <title>Text Area Counter</title>
 </head>
 <body>
-<section id="character-counter-container"></section>
-    <form>
-        <label>Tell me something(200 characters max):</label>
-        <textarea name="message" id="message" class="textarea"></textarea>
-        <div id="character-counter">
-            <span id="typed">0</span>
-            <span>/ 200</span>
-        </div>
-        <button class="button">Send Message</button>       
-    </form>
+    <form name="form_main">
+        <fieldset>
+        <label for ="text"> Tell me something (max 200 chararacters):</label><br>
+        <textarea name="text" id="text" class="textarea" maxlength="200"></textarea><br>
+        <div id="counter"></div>  
+        </fieldset>
+</form>
     <script>
-            var count= function(){
-        document.getElementById("message").innerHTML = message.length;
-    }
-    var button = document.querySelector('button');
+    const text = document.getElementById('text');
+    const count = document.getElementById('counter');
+    
+    text.addEventListener('input', function (e) {
+    const target = e.target;
+    const maxLength = target.getAttribute('maxlength');
+    const currentLength = target.value.length;
 
-    button.addEventListener('click', message)
+    count.innerHTML = `${currentLength}/${maxLength}`;
+});
     </script>
 
 
