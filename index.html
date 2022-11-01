@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Area Counter</title>
+</head>
+<body>
+<section id="character-counter-container"></section>
+    <form>
+        <label>Tell me something(200 characters max):</label>
+        <textarea name="message" id="message" class="textarea"></textarea>
+        <div id="character-counter">
+            <span id="typed">0</span>
+            <span>/ 200</span>
+        </div>
+        <button class="button">Send Message</button>       
+    </form>
+    <script>
+            var count= function(){
+        document.getElementById("message").innerHTML = message.length;
+    }
+    var button = document.querySelector('button');
+
+    button.addEventListener('click', message)
+    </script>
+
+
+    
+</body>
+</html>
